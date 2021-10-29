@@ -35,10 +35,10 @@ d6roll.src = 'images/start/d6.png';
 
 // Double d6 roll
 const doubled6roll1 = document.querySelector('#double-d6-roll-1');
-doubled6roll1.src = 'images/d6/1.png';
+doubled6roll1.src = 'images/start/d6.png';
 
 const doubled6roll2 = document.querySelector('#double-d6-roll-2');
-doubled6roll2.src = 'images/d6/1.png';
+doubled6roll2.src = 'images/start/d6.png';
 
 // d12 dice
 const d12roll = document.querySelector('#d12-roll');
