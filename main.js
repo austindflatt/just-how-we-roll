@@ -84,9 +84,39 @@ d20rollMode.innerText = "NA";
 /*******************
  * EVENT LISTENERS *
  *******************/
-
-
-
+// d6
+d6roll.addEventListener('click', function () {
+  let roll = getRandomNumber(6);
+  d6roll.src = "images/d6/" + roll + ".png";
+  sixes.push(roll);
+})
+// double d6
+doubled6roll1.addEventListener('click', function () {
+  let roll = getRandomNumber(6);
+  let roll2 = getRandomNumber(6);
+  doubled6roll1.src = "images/d6/" + roll + ".png";
+  doubled6roll2.src = "images/d6/" + roll2 + ".png";
+  doubleSixes.push(roll);
+})
+doubled6roll2.addEventListener('click', function () {
+  let roll = getRandomNumber(6);
+  let roll2 = getRandomNumber(6);
+  doubled6roll1.src = "images/d6/" + roll + ".png";
+  doubled6roll2.src = "images/d6/" + roll2 + ".png";
+  doubleSixes.push(roll);
+})
+// d12
+d12roll.addEventListener('click', function () {
+  let roll = getRandomNumber(12);
+  d12roll.src = "images/numbers/" + roll + ".png";
+  twelves.push(roll);
+})
+// d20
+d20roll.addEventListener('click', function () {
+  let roll = getRandomNumber(20);
+  d20roll.src = "images/numbers/" + roll + ".png";
+  twenties.push(roll);
+})
 
 /******************
  * RESET FUNCTION *
