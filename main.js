@@ -89,6 +89,13 @@ d6roll.addEventListener('click', function () {
   let roll = getRandomNumber(6);
   d6roll.src = "images/d6/" + roll + ".png";
   sixes.push(roll);
+  // mean
+  let d6Mean = mean(sixes).toFixed(2);
+  d6rollMean.innerText = d6Mean;
+  // median
+  let d6Median = mean(sixes).toFixed(2);
+  d6rollMedian.innerText = d6Median;
+
 })
 // double d6
 doubled6roll1.addEventListener('click', function () {
@@ -97,6 +104,12 @@ doubled6roll1.addEventListener('click', function () {
   doubled6roll1.src = "images/d6/" + roll + ".png";
   doubled6roll2.src = "images/d6/" + roll2 + ".png";
   doubleSixes.push(roll);
+  // mean
+  let doubled6Mean = mean(doubleSixes).toFixed(2);
+  doubled6rollMean.innerText = doubled6Mean;
+  // median
+  let d6doubleMedian = mean(doubleSixes).toFixed(2);
+  doubled6rollMedian.innerText = d6doubleMedian;
 })
 doubled6roll2.addEventListener('click', function () {
   let roll = getRandomNumber(6);
@@ -104,18 +117,36 @@ doubled6roll2.addEventListener('click', function () {
   doubled6roll1.src = "images/d6/" + roll + ".png";
   doubled6roll2.src = "images/d6/" + roll2 + ".png";
   doubleSixes.push(roll);
+  // mean
+  let doubled6Mean = mean(doubleSixes).toFixed(2);
+  doubled6rollMean.innerText = doubled6Mean;
+  // median
+  let d6doubleMedian = mean(doubleSixes).toFixed(2);
+  doubled6rollMedian.innerText = d6doubleMedian;
 })
 // d12
 d12roll.addEventListener('click', function () {
   let roll = getRandomNumber(12);
   d12roll.src = "images/numbers/" + roll + ".png";
   twelves.push(roll);
+  // mean
+  let d12Mean = mean(twelves).toFixed(2);
+  d12rollMean.innerText = d12Mean;
+  // median
+  let d12Median = mean(twelves).toFixed(2);
+  d12rollMedian.innerText = d12Median;
 })
 // d20
 d20roll.addEventListener('click', function () {
   let roll = getRandomNumber(20);
   d20roll.src = "images/numbers/" + roll + ".png";
   twenties.push(roll);
+  // mean
+  let d20Mean = mean(twenties).toFixed(2);
+  d20rollMean.innerText = d20Mean;
+  // median
+  let d20Median = mean(twenties).toFixed(2);
+  d20rollMedian.innerText = d20Median;
 })
 
 /******************
@@ -128,6 +159,14 @@ d20roll.addEventListener('click', function () {
    doubled6roll2.src = 'images/start/d6.png';
    d12roll.src = 'images/start/d12.jpeg';
    d20roll.src = 'images/start/d20.jpg';
+   d6rollMean.innerText = "NA";
+   d6rollMedian.innerText = "NA";
+   doubled6rollMean.innerText = "NA";
+   doubled6rollMedian.innerText = "NA";
+   d12rollMean.innerText = "NA";
+   d12rollMedian.innerText = "NA";
+   d20rollMean.innerText = "NA";
+   d20rollMedian.innerText = "NA";
  });
 /****************************
  * CLICK HANDLING FUNCTIONS *
@@ -138,3 +177,20 @@ d20roll.addEventListener('click', function () {
 /****************
  * MATH SECTION *
  ****************/
+function mean (str) {
+  let mean = 0;
+  for (let i = 0; i < str.length; i++) {
+    mean += str[i];
+  }
+  let output = mean / str.length;
+  return output;
+}
+
+function median (str) {
+  const sorted = str.slice().sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 0) {
+    return (sorted[middle - 1] + sorted[middle]) / 2;
+  }
+  return sorted[middle];
+}
