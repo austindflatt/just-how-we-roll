@@ -121,8 +121,14 @@ d20roll.addEventListener('click', function () {
 /******************
  * RESET FUNCTION *
  ******************/
-
-reset();
+ const reset = document.querySelector('#reset-button');
+ reset.addEventListener('click', function () {
+   d6roll.src = 'images/start/d6.png';
+   doubled6roll1.src = 'images/start/d6.png';
+   doubled6roll2.src = 'images/start/d6.png';
+   d12roll.src = 'images/start/d12.jpeg';
+   d20roll.src = 'images/start/d20.jpg';
+ });
 /****************************
  * CLICK HANDLING FUNCTIONS *
 ****************************/
